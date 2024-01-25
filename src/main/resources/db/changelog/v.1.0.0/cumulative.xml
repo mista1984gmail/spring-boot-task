@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <include file="2024-01-08-1-create-table-house.xml" relativeToChangelogFile="true" />
+    <include file="2024-01-10-1-create-table-person.xml" relativeToChangelogFile="true" />
+    <include file="2024-01-10-2-create-table-person-house.xml" relativeToChangelogFile="true" />
+    <include file="2024-01-10-3-insert-table-house.xml" relativeToChangelogFile="true" />
+    <include file="2024-01-10-4-insert-table-person.xml" relativeToChangelogFile="true" />
+    <include file="2024-01-10-5-insert-table-person-own-house.xml" relativeToChangelogFile="true" />
+    <include file="2024-01-20-1-create-table-house-history.xml" relativeToChangelogFile="true" />
+    <include file="2024-01-21-1-insert-table-house-history.xml" relativeToChangelogFile="true" />
+    <include file="2024-01-24-1-add-column-deleted-table-person.xml" relativeToChangelogFile="true" />
+    <include file="2024-01-24-2-add-column-deleted-table-houses.xml" relativeToChangelogFile="true" />
+
+</databaseChangeLog>

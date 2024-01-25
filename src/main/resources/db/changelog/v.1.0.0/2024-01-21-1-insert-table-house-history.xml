@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet logicalFilePath="2024-01-21-1-insert-table-house-history"
+               id="2024-01-21-1-insert-table-house-history" author="s.mitskevich">
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="2"/>
+            <column  name="person_id"  value="1"/>
+            <column  name="person_type"  value="TENANT"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="2"/>
+            <column  name="person_id"  value="2"/>
+            <column  name="person_type"  value="TENANT"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="2"/>
+            <column  name="person_id"  value="3"/>
+            <column  name="person_type"  value="TENANT"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="3"/>
+            <column  name="person_id"  value="4"/>
+            <column  name="person_type"  value="TENANT"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="3"/>
+            <column  name="person_id"  value="5"/>
+            <column  name="person_type"  value="TENANT"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="3"/>
+            <column  name="person_id"  value="6"/>
+            <column  name="person_type"  value="TENANT"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="4"/>
+            <column  name="person_id"  value="7"/>
+            <column  name="person_type"  value="TENANT"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="4"/>
+            <column  name="person_id"  value="8"/>
+            <column  name="person_type"  value="TENANT"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="4"/>
+            <column  name="person_id"  value="9"/>
+            <column  name="person_type"  value="TENANT"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="5"/>
+            <column  name="person_id"  value="10"/>
+            <column  name="person_type"  value="TENANT"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="2"/>
+            <column  name="person_id"  value="2"/>
+            <column  name="person_type"  value="OWNER"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="2"/>
+            <column  name="person_id"  value="3"/>
+            <column  name="person_type"  value="OWNER"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="3"/>
+            <column  name="person_id"  value="4"/>
+            <column  name="person_type"  value="OWNER"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="4"/>
+            <column  name="person_id"  value="7"/>
+            <column  name="person_type"  value="OWNER"/>
+        </insert>
+
+        <insert tableName="house_history">
+            <column  name="house_id"  value="5"/>
+            <column  name="person_id"  value="10"/>
+            <column  name="person_type"  value="OWNER"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="uuid_type" value="uuid" dbms="postgresql"/>
+    <property name="uuid_function" value="uuid_generate_v4()" dbms="postgresql"/>
+
+    <changeSet logicalFilePath="2024-01-10-1-create-table-person"
+               id="2024-01-10-1-create-table-person" author="s.mitskevich">
+        <sql>CREATE EXTENSION IF NOT EXISTS "uuid-ossp"</sql>
+        <sql>CREATE TYPE sex AS ENUM ('MALE','FEMALE')</sql>
+        <sql>CREATE CAST (varchar AS sex) WITH INOUT AS IMPLICIT</sql>
+        <createTable tableName="person">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+
+            <column name="uuid_person" type="${uuid_type}" defaultValueComputed="${uuid_function}">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="name" type="varchar(60)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="surname" type="varchar(60)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="sex" type="sex">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="passport_series" type="varchar(2)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="passport_number" type="varchar(7)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="create_date" type="timestamp" defaultValueDate="current_timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="update_date" type="timestamp" defaultValueDate="current_timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="resident_house" type="BIGINT"/>
+        </createTable>
+        <addUniqueConstraint columnNames="passport_series, passport_number"
+                              constraintName="const_passport"
+                              tableName="person"/>
+        <addForeignKeyConstraint baseTableName="person"
+                                 baseColumnNames="resident_house"
+                                 constraintName="FK_person_live_house"
+                                 referencedTableName="houses"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>
