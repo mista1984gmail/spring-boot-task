@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="uuid_type" value="uuid" dbms="postgresql"/>
+    <property name="uuid_function" value="uuid_generate_v4()" dbms="postgresql"/>
+
+    <changeSet logicalFilePath="2024-01-08-1-create-table-house"
+               id="2024-01-08-1-create-table-house" author="s.mitskevich">
+        <sql>CREATE EXTENSION IF NOT EXISTS "uuid-ossp"</sql>
+        <createTable tableName="houses">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+
+            <column name="uuid_house" type="${uuid_type}" defaultValueComputed="${uuid_function}">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="area" type="double" defaultValue="0.0">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="country" type="varchar(60)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="city" type="varchar(60)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="street" type="varchar(60)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="number" type="int">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="create_date" type="timestamp" defaultValueDate="current_timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

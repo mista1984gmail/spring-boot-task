@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet logicalFilePath="2024-01-10-2-create-table-person-house"
+               id="2024-01-10-2-create-table-person-house" author="s.mitskevich">
+        <createTable tableName="owners">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+
+            <column name="house_id" type="BIGINT"/>
+            <column name="person_id" type="BIGINT"/>
+
+        </createTable>
+        <addForeignKeyConstraint baseTableName="owners"
+                                 baseColumnNames="house_id"
+                                 constraintName="FK_person_own_house"
+                                 referencedTableName="houses"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="owners"
+                                 baseColumnNames="person_id"
+                                 constraintName="FK_house_own_person"
+                                 referencedTableName="person"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

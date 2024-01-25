@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet logicalFilePath="2024-01-20-1-create-table-house-history"
+               id="2024-01-20-1-create-table-house-history" author="s.mitskevich">
+        <sql>CREATE TYPE person_type AS ENUM ('OWNER','TENANT')</sql>
+        <sql>CREATE CAST (varchar AS person_type) WITH INOUT AS IMPLICIT</sql>
+        <createTable tableName="house_history">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="house_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="person_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_date" type="timestamp" defaultValueDate="current_timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="person_type" type="person_type">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="house_history"
+                                 baseColumnNames="house_id"
+                                 constraintName="FK_house_house_history"
+                                 referencedTableName="houses"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="house_history"
+                                 baseColumnNames="person_id"
+                                 constraintName="FK_person_house_history"
+                                 referencedTableName="person"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+</databaseChangeLog>

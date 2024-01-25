@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet logicalFilePath="2024-01-10-3-insert-table-houses"
+               id="2024-01-10-3-insert-table-houses" author="s.mitskevich">
+
+        <insert tableName="houses">
+            <column  name="area"  value="55.6"/>
+            <column  name="country"  value="RB"/>
+            <column  name="city"  value="Grodno"/>
+            <column  name="street"  value="Pobedy"/>
+            <column  name="number"  value="1"/>
+        </insert>
+
+        <insert tableName="houses">
+            <column  name="area"  value="70.6"/>
+            <column  name="country"  value="RB"/>
+            <column  name="city"  value="Grodno"/>
+            <column  name="street"  value="Pobedy"/>
+            <column  name="number"  value="2"/>
+        </insert>
+
+        <insert tableName="houses">
+            <column  name="area"  value="75.6"/>
+            <column  name="country"  value="RB"/>
+            <column  name="city"  value="Grodno"/>
+            <column  name="street"  value="Pobedy"/>
+            <column  name="number"  value="3"/>
+        </insert>
+
+        <insert tableName="houses">
+            <column  name="area"  value="42.6"/>
+            <column  name="country"  value="RB"/>
+            <column  name="city"  value="Grodno"/>
+            <column  name="street"  value="Pobedy"/>
+            <column  name="number"  value="4"/>
+        </insert>
+
+        <insert tableName="houses">
+            <column  name="area"  value="51.6"/>
+            <column  name="country"  value="RB"/>
+            <column  name="city"  value="Grodno"/>
+            <column  name="street"  value="Pobedy"/>
+            <column  name="number"  value="5"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

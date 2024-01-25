@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet logicalFilePath="2024-01-10-4-insert-table-person"
+               id="2024-01-10-4-insert-table-person" author="s.mitskevich">
+
+        <insert tableName="person">
+            <column  name="name"  value="Hassan"/>
+            <column  name="surname"  value="Herman"/>
+            <column  name="sex"  value="MALE"/>
+            <column  name="passport_series"  value="KH"/>
+            <column  name="passport_number"  value="1234567"/>
+            <column  name="resident_house"  value="2"/>
+        </insert>
+
+        <insert tableName="person">
+            <column  name="name"  value="Valda"/>
+            <column  name="surname"  value="Nitzsche"/>
+            <column  name="sex"  value="FEMALE"/>
+            <column  name="passport_series"  value="KH"/>
+            <column  name="passport_number"  value="1234568"/>
+            <column  name="resident_house"  value="2"/>
+        </insert>
+
+        <insert tableName="person">
+            <column  name="name"  value="Daina"/>
+            <column  name="surname"  value="Mante"/>
+            <column  name="sex"  value="FEMALE"/>
+            <column  name="passport_series"  value="KH"/>
+            <column  name="passport_number"  value="1234569"/>
+            <column  name="resident_house"  value="2"/>
+        </insert>
+
+        <insert tableName="person">
+            <column  name="name"  value="Nadene"/>
+            <column  name="surname"  value="Cummerata"/>
+            <column  name="sex"  value="FEMALE"/>
+            <column  name="passport_series"  value="KH"/>
+            <column  name="passport_number"  value="1234565"/>
+            <column  name="resident_house"  value="3"/>
+        </insert>
+
+        <insert tableName="person">
+            <column  name="name"  value="Cecile"/>
+            <column  name="surname"  value="Wuckert"/>
+            <column  name="sex"  value="FEMALE"/>
+            <column  name="passport_series"  value="KH"/>
+            <column  name="passport_number"  value="1234564"/>
+            <column  name="resident_house"  value="3"/>
+        </insert>
+
+        <insert tableName="person">
+            <column  name="name"  value="Cherri"/>
+            <column  name="surname"  value="Cronin"/>
+            <column  name="sex"  value="FEMALE"/>
+            <column  name="passport_series"  value="KH"/>
+            <column  name="passport_number"  value="1234563"/>
+            <column  name="resident_house"  value="3"/>
+        </insert>
+
+        <insert tableName="person">
+            <column  name="name"  value="Gaston"/>
+            <column  name="surname"  value="Bergstrom"/>
+            <column  name="sex"  value="MALE"/>
+            <column  name="passport_series"  value="KH"/>
+            <column  name="passport_number"  value="1234562"/>
+            <column  name="resident_house"  value="4"/>
+        </insert>
+
+        <insert tableName="person">
+            <column  name="name"  value="Santo"/>
+            <column  name="surname"  value="Grant"/>
+            <column  name="sex"  value="MALE"/>
+            <column  name="passport_series"  value="KH"/>
+            <column  name="passport_number"  value="1234561"/>
+            <column  name="resident_house"  value="4"/>
+        </insert>
+
+        <insert tableName="person">
+            <column  name="name"  value="Fumiko"/>
+            <column  name="surname"  value="Goodwin"/>
+            <column  name="sex"  value="MALE"/>
+            <column  name="passport_series"  value="KH"/>
+            <column  name="passport_number"  value="1234556"/>
+            <column  name="resident_house"  value="4"/>
+        </insert>
+
+        <insert tableName="person">
+            <column  name="name"  value="Mauricio"/>
+            <column  name="surname"  value="Rice"/>
+            <column  name="sex"  value="MALE"/>
+            <column  name="passport_series"  value="KH"/>
+            <column  name="passport_number"  value="1234557"/>
+            <column  name="resident_house"  value="5"/>
+        </insert>
+
+
+    </changeSet>
+
+</databaseChangeLog>
